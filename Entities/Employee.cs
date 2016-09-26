@@ -13,7 +13,8 @@ namespace Entities
     {
         //  Heres the variables
         #region Variables
-
+        
+        //  Heres the constants used in the class
         #region Constants
 
         /// <summary>

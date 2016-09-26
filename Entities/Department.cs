@@ -6,25 +6,68 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
+    /// <summary>
+    /// This is the class holding the department
+    /// </summary>
     public class Department
     {
         //  Heres the variables
         #region Variables
 
+        //  These are the custom variables I use
         #region Custom variables
 
+        /// <summary>
+        /// This is the yearly payout for the department
+        /// </summary>
         decimal yearleyPayout;
+        /// <summary>
+        /// This is the monthley payout for the department
+        /// </summary>
         decimal monthleyPayout;
+        /// <summary>
+        /// This is where the salary tops before the top tax is required
+        /// </summary>
         decimal topTax = 467300m;
+        /// <summary>
+        /// This is for the calculations where its the amount under the top tax
+        /// </summary>
         decimal monthlyUnderTopTax;
+        /// <summary>
+        /// This is for the calculations where its the amount over the top tax
+        /// </summary>
         decimal monthlyOverTopTax;
+        /// <summary>
+        /// This is the total yearly payout for the department
+        /// </summary>
         decimal totalYearleyPayout;
+        /// <summary>
+        /// this is the total monthly payout by the company
+        /// </summary>
         decimal totalMonthleyPayout;
+        /// <summary>
+        /// This is for the calculations where this is the amount under the top tax
+        /// </summary>
         decimal yearlyUnderTopTax;
+        /// <summary>
+        /// This is for the calcuæations where this is the amount over the top tax
+        /// </summary>
         decimal yearlyOverTopTax;
+        /// <summary>
+        /// This is the top tax, which should be multiplied by 12
+        /// </summary>
         decimal yearlytopTax;
+        /// <summary>
+        /// The top tax rate
+        /// </summary>
         decimal topTaxRate = 0.15m;
+        /// <summary>
+        /// The tax rate under the top tax
+        /// </summary>
         decimal underTopTaxRate = 0.35m;
+        /// <summary>
+        /// This is to see if the budget has been exceeded
+        /// </summary>
         decimal budgetExcession;
 
         #endregion

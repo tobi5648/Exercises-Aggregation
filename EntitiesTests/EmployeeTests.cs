@@ -4,12 +4,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace EntitiesTests
 {
+    /// <summary>
+    /// Tests Employee
+    /// </summary>
     [TestClass]
     public class EmployeeTests
     {
-
+        //  Tests the christmas bonus
         #region Christmas bonus
 
+        /// <summary>
+        /// Tests if it will fail with a negative value
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void ChristmasBonusNegative()
@@ -25,6 +31,9 @@ namespace EntitiesTests
             Assert.AreEqual(negativeChristmasBonus, employee.ChristmasBonus);
         }
 
+        /// <summary>
+        /// Tests if it will pass a positive value
+        /// </summary>
         [TestMethod]
         public void ChristmasBonusPositive()
         {
@@ -41,8 +50,12 @@ namespace EntitiesTests
 
         #endregion
 
+        // Tests the firstname
         #region Firstname
 
+        /// <summary>
+        /// Tests if it will fail if digits is in the name
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void FirstnameWithDigits()
@@ -58,6 +71,9 @@ namespace EntitiesTests
             Assert.AreEqual(DigitFirstname, employee.Firstname);
         }
 
+        /// <summary>
+        /// Tests if it will fail if the value of the name is whitespace/null
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void FirstnameWithWhitespace()
@@ -73,6 +89,9 @@ namespace EntitiesTests
             Assert.AreEqual(WhitespaceFirstname, employee.Firstname);
         }
         
+        /// <summary>
+        /// Tests if a name can be given to the employee
+        /// </summary>
         [TestMethod]
         public void Firstname()
         {
@@ -89,8 +108,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests the lastname/s
         #region Lastname/s
 
+        /// <summary>
+        /// Tests if it will fail if digits is in the name
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void LastnameWithDigits()
@@ -106,6 +129,9 @@ namespace EntitiesTests
             Assert.AreEqual(DigitLastname, employee.Lastnames);
         }
 
+        /// <summary>
+        /// Tests if it will fail if the value of the name is whitespace/null
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void LastnameWithWhitespace()
@@ -121,6 +147,9 @@ namespace EntitiesTests
             Assert.AreEqual(WhitespaceLastname, employee.Lastnames);
         }
 
+        /// <summary>
+        /// Tests if a surname can be given to the employee
+        /// </summary>
         [TestMethod]
         public void Lastname()
         {
@@ -137,8 +166,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests the monthly base salary
         #region MonthlyBaseSalary
 
+        /// <summary>
+        /// Tests if it will fail with a negative value
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void MonthlyBaseSalaryNegative()
@@ -154,6 +187,9 @@ namespace EntitiesTests
             Assert.AreEqual(negativeMonthlyBaseSalary, employee.MonthlyBaseSalary);
         }
 
+        /// <summary>
+        /// Tests if it will pass a positive value
+        /// </summary>
         [TestMethod]
         public void MonthlyBaseSalaryPositive()
         {
@@ -170,8 +206,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests the monthly bonus salary
         #region MonthlyBonusSalary
 
+        /// <summary>
+        /// Tests if it will fail with a negative value
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void MonthlyBonusSalaryNegative()
@@ -187,6 +227,9 @@ namespace EntitiesTests
             Assert.AreEqual(negativeMonthlyBonusSalary, employee.MonthlyBonusSalary);
         }
 
+        /// <summary>
+        /// Tests if it will pass a positive value
+        /// </summary>
         [TestMethod]
         public void MonthlyBonusSalaryPositive()
         {
@@ -203,8 +246,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests the social security number
         #region Social Security Number
 
+        /// <summary>
+        /// Tests if it will fail if the value is negative
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void SsnNegative()
@@ -220,6 +267,9 @@ namespace EntitiesTests
             Assert.AreEqual(negativessn, employee.Ssn);
         }
 
+        /// <summary>
+        /// Tests if it will pass if the value is positive
+        /// </summary>
         [TestMethod]
         public void SsnPositive()
         {
@@ -234,6 +284,9 @@ namespace EntitiesTests
             Assert.AreEqual(positivessn, employee.Ssn);
         }
 
+        /// <summary>
+        /// Tests if it will fail if the value is with letters
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void SsnLetters()
@@ -249,6 +302,9 @@ namespace EntitiesTests
             Assert.AreEqual(letterSsn, employee.Ssn);
         }
 
+        /// <summary>
+        /// Tests if it will fail if the value is empty
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void SsnEmpty()
@@ -264,11 +320,14 @@ namespace EntitiesTests
             Assert.AreEqual(emptySsn, employee.Ssn);
         }
 
-
         #endregion
 
+        //  Tests if an employee can be created
         #region Employee
-        
+
+        /// <summary>
+        /// Tests if an employee can be created
+        /// </summary>
         [TestMethod]
         public void Employee()
         {
@@ -301,8 +360,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests the GetMonthlyPayout
         #region Get Monthly Payout
         
+        /// <summary>
+        /// tests if the monthly payout can be calculated
+        /// </summary>
         [TestMethod]
         public void GetMonthlyPayout()
         {
@@ -323,6 +386,9 @@ namespace EntitiesTests
             Assert.AreEqual(expectedPayout, payout);
         }
 
+        /// <summary>
+        /// tests if the monthly payout will fail if a value is negative
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void GetMonthlyPayoutFail()
@@ -348,8 +414,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests the GetYearlyPayout
         #region Get Yearly Payout
 
+        /// <summary>
+        /// tests if the monthly payout can be calculated
+        /// </summary>
         [TestMethod]
         public void GetYearlyPayout()
         {
@@ -376,6 +446,9 @@ namespace EntitiesTests
             Assert.AreEqual(christmasBonus, employee.ChristmasBonus);
         }
 
+        /// <summary>
+        /// tests if the monthly payout will fail if a value is negative
+        /// </summary>
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [TestMethod]
         public void GetYearlyPayoutFail()

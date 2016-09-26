@@ -7,13 +7,17 @@ using Entities;
 namespace EntitiesTests
 {
     /// <summary>
-    /// Summary description for DepartmentTests
+    /// Summary description for DepartmentTests. Tests Department
     /// </summary>
     [TestClass]
     public class DepartmentTests
     {
+        //  Tests Employee
         #region Employees
 
+        /// <summary>
+        /// Tests for employees in department
+        /// </summary>
         [TestMethod]
         public void EmployeesInDepartment()
         {
@@ -52,8 +56,12 @@ namespace EntitiesTests
 
         #endregion
 
+        // Tests the monthly payout
         #region MonthlyPayout
-
+        
+        /// <summary>
+        /// Tests the monthly payout
+        /// </summary>
         [TestMethod]
         public void MonthlyPayoutInDepartment()
         {
@@ -92,8 +100,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests the yearly payout
         #region YearlyPayout
 
+        /// <summary>
+        /// Tests the yearly payout
+        /// </summary>
         [TestMethod]
         public void YearlyPayoutInDepartment()
         {
@@ -133,8 +145,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tets the yearly budget
         #region YearlyBudget
 
+        /// <summary>
+        /// Tests the yearly budget
+        /// </summary>
         [TestMethod]
         public void YearlyBudgetInDepartment()
         {
@@ -161,8 +177,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests if it registers an exceession
         #region IsBudgetExceeded
 
+        /// <summary>
+        /// Tests to see if it is registered when budget is exceeded
+        /// </summary>
         [TestMethod]
         public void IsBudgetExceededInDepartment()
         {
@@ -189,8 +209,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests if employees can be added
         #region Add
 
+        /// <summary>
+        /// Tests if employees can be added
+        /// </summary>
         [TestMethod]
         public void Add()
         {
@@ -216,8 +240,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests if employees can be reached
         #region GetEmployeeBy
 
+        /// <summary>
+        /// Tests to see if employees can be gotten by their ssn
+        /// </summary>
         [TestMethod]
         public void GetEmployeeBySsn()
         {
@@ -240,6 +268,9 @@ namespace EntitiesTests
             Assert.AreEqual(emp, department.GetEmployeeBy(ssn));
         }
 
+        /// <summary>
+        /// Tests if employees can be gotten by their name
+        /// </summary>
         [TestMethod]
         public void GetEmployeeByName()
         {
@@ -265,8 +296,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests if employees can be removed
         #region Remove
 
+        /// <summary>
+        /// Tests if employees can be removed, and hence added
+        /// </summary>
         [TestMethod]
         public void Remove()
         {
@@ -294,8 +329,12 @@ namespace EntitiesTests
 
         #endregion
 
+        //  Tests if it will register an excession
         #region BudgetExcession
 
+        /// <summary>
+        /// Tests if it can calculate a possible excession in the budget
+        /// </summary>
         [TestMethod]
         public void BudgetExcession()
         {
