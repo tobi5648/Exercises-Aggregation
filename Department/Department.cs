@@ -24,7 +24,7 @@ namespace Department
         private decimal yearlyBudget;
 
         #endregion
-//  Test to comment
+//  Test to commenting
         #region Properties
 
         /// <summary>
