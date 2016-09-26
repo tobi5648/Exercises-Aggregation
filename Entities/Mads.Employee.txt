@@ -1,0 +1,177 @@
+﻿namespace Entities
+{
+    #region Usings
+    using System;
+    using System.Linq;
+    #endregion
+ 
+    public class Employee
+    {
+        #region Constants
+        private const double NormalTaxRate = 0.37;
+        private const double TopTaxRate = 0.15;
+        private const decimal TopTaxLimit = 467300m;
+        #endregion
+ 
+ 
+        #region Fields
+        private string firstname;
+        private string lastnames;
+        private string ssn;
+        private decimal monthlyBaseSalary;
+        private decimal monthlyBonusSalary;
+        private decimal christmasBonus;
+        #endregion
+ 
+ 
+        #region Constructors
+        public Employee( string firstname, string lastnames, string ssn, decimal monthlyBaseSalary, decimal monthlyBonusSalary, decimal christmasBonus )
+        {
+            try
+            {
+                Firstname = firstname;
+                Lastnames = lastnames;
+                Ssn = ssn;
+                MonthlyBaseSalary = monthlyBaseSalary;
+                MonthlyBonusSalary = monthlyBonusSalary;
+                ChristmasBonus = christmasBonus;
+            }
+            catch ( ArgumentOutOfRangeException )
+            {
+                throw;
+            }
+            catch ( ArgumentException )
+            {
+                throw;
+            }
+        }
+        #endregion
+ 
+ 
+        #region Methods
+        
+ 
+        private static bool IsValidTextuelString( string text )
+        {
+            Regex expression = new Regex( @"^[\p{ L } \.'\-]+$" );
+            if ( !expression.IsMatch( text ) )
+                return false;
+            else return true;
+
+            	if ( String.IsNullOrWhiteSpace( s ) )
+                	return false;
+            	else if ( s.Any( char.IsDigit ) )
+                	return false;
+            	else return true;
+			}
+        }
+ 
+        private static bool IsValidNumericalString( string s )
+        {
+            if ( String.IsNullOrWhiteSpace( s ) )
+                return false;
+            else if ( !s.Any( char.IsDigit ) )
+                return false;
+            else return true;
+        }
+ 
+        private bool IsValidMonitarianValue( decimal d ) => d < 0.0m ? false : true;
+        #endregion
+ 
+ 
+        #region Properties
+        public string Firstname
+        {
+            get
+            {
+                return firstname;
+            }
+ 
+            set
+            {
+ 				if ( value == null )
+                    throw new ArgumentNullException();
+                if ( !IsValidTextualString( value ) )
+                    throw new ArgumentOutOfRangeException();
+                if ( value != firstname )
+                    firstname = value;
+
+            }
+        }
+ 
+        public string Lastnames
+        {
+            get
+            {
+                return lastnames;
+            }
+ 
+            set
+            {
+                if ( !IsValidTextuelString( value ) )
+                    throw new ArgumentException();
+                lastnames = value;
+            }
+        }
+ 
+        public string Ssn
+        {
+            get
+            {
+                return ssn;
+            }
+ 
+            set
+            {
+                if ( !IsValidNumericalString( value ) )
+                    throw new ArgumentException();
+                ssn = value;
+            }
+        }
+ 
+        public decimal MonthlyBaseSalary
+        {
+            get
+            {
+                return monthlyBaseSalary;
+            }
+ 
+            set
+            {
+                if ( !IsValidMonitarianValue( value ) )
+                    throw new ArgumentOutOfRangeException();
+                monthlyBaseSalary = value;
+            }
+        }
+ 
+        public decimal MonthlyBonusSalary
+        {
+            get
+            {
+                return monthlyBonusSalary;
+            }
+ 
+            set
+            {
+                if ( !IsValidMonitarianValue( value ) )
+                    throw new ArgumentOutOfRangeException();
+                monthlyBonusSalary = value;
+            }
+        }
+ 
+        public decimal ChristmasBonus
+        {
+            get
+            {
+                return christmasBonus;
+            }
+ 
+            set
+            {
+                if ( !IsValidMonitarianValue( value ) )
+                    throw new ArgumentOutOfRangeException();
+                christmasBonus = value;
+            }
+        }
+        #endregion
+    }
